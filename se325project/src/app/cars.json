@@ -1,0 +1,145 @@
+[
+  {
+    "id": 1,
+    "imageUrl": "assets/bmw1.png",
+    "make": "BMW",
+    "model": "118D",
+    "year": 2020,
+    "price": 18000,
+    "fuel": "diesel",
+    "transmission": "automatic"
+  },
+  {
+    "id": 2,
+    "imageUrl": "assets/bmw3.png",
+    "make": "BMW",
+    "model": "320D",
+    "year": 2021,
+    "price": 38000,
+    "fuel": "diesel",
+    "transmission": "manual"
+  },
+  {
+    "id": 3,
+    "imageUrl": "assets/bmw4.png",
+    "make": "BMW",
+    "model": "435i",
+    "year": 2020,
+    "price": 43000,
+    "fuel": "gasoline",
+    "transmission": "automatic"
+  },
+  {
+    "id": 4,
+    "imageUrl": "assets/bmw.png",
+    "make": "BMW",
+    "model": "520D",
+    "year": 2021,
+    "price": 48000,
+    "fuel": "diesel",
+    "transmission": "automatic"
+  },
+  {
+    "id": 5,
+    "imageUrl": "assets/bmw7.png",
+    "make": "BMW",
+    "model": "720D",
+    "year": 2021,
+    "price": 67000,
+    "fuel": "diesel",
+    "transmission": "automatic"
+  },
+  {
+    "id": 6,
+    "imageUrl": "assets/audia1.png",
+    "make": "Audi",
+    "model": "A1",
+    "year": 2021,
+    "price": 20000,
+    "fuel": "gasoline",
+    "transmission": "manual"
+  },
+  {
+    "id": 7,
+    "imageUrl": "assets/audia4.png",
+    "make": "Audi",
+    "model": "A4",
+    "year": 2019,
+    "price": 22000,
+    "fuel": "gasoline",
+    "transmission": "automatic"
+  },
+  {
+    "id": 8,
+    "imageUrl": "assets/audia6.png",
+    "make": "Audi",
+    "model": "A6",
+    "year": 2012,
+    "price": 15000,
+    "fuel": "diesel",
+    "transmission": "manual"
+  },
+  {
+    "id": 9,
+    "imageUrl": "assets/audia8.png",
+    "make": "Audi",
+    "model": "A8",
+    "year": 2019,
+    "price": 25000,
+    "fuel": "gasoline",
+    "transmission": "automatic"
+  },
+  {
+    "id": 10,
+    "imageUrl": "assets/mercedesc.png",
+    "make": "Mercedes",
+    "model": "C class",
+    "year": 2020,
+    "price": 22000,
+    "fuel": "diesel",
+    "transmission":"manual"
+  },
+
+  {
+    "id": 11,
+    "imageUrl": "assets/mercedese.png",
+    "make": "Mercedes",
+    "model": "E class",
+    "year": 2021,
+    "price": 32000,
+    "fuel": "diesel",
+    "transmission":"automatic"
+  },
+  {
+    "id": 12,
+    "imageUrl": "assets/mercedess.png",
+    "make": "Mercedes",
+    "model": "S class",
+    "year": 2021,
+    "price": 45000,
+    "fuel": "gasoline",
+    "transmission":"manual"
+  },
+  {
+    "id": 13,
+    "imageUrl": "assets/talisman.png",
+    "make": "Renault",
+    "model": "Talismane",
+    "year": 2020,
+    "price": 18000,
+    "fuel": "diesel",
+    "transmission":"manual"
+  },
+  {
+    "id": 14,
+    "imageUrl": "assets/megane.png",
+    "make": "Renault",
+    "model": "Megane",
+    "year": 2021,
+    "price": 15000,
+    "fuel": "diesel",
+    "transmission":"automatic"
+  }
+
+
+]

@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "test",
+      "email": "user1@gmail.com",
+      "password": "test",
+      "carList": [
+        {
+          "id": 4,
+          "imageUrl": "assets/bmw.png",
+          "make": "BMW",
+          "model": "520D",
+          "year": 2021,
+          "price": 48000,
+          "fuel": "diesel",
+          "transmission": "automatic"
+        }
+      ]
+    }
+  ]
+}

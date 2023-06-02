@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {User} from "../models";
 
 @Injectable({
@@ -9,7 +9,8 @@ export class SessionService {
   private isLoggedIn = false;
   user: User | undefined;
 
-  constructor() { }
+  constructor() {
+  }
 
   login(user: User) {
     this.isLoggedIn = true;
@@ -21,4 +22,15 @@ export class SessionService {
     this.user = undefined;
   }
 
+  getIsLoggedIn() {
+    return this.isLoggedIn;
+  }
+
+  getLoggedInUser() {
+    return this.user;
+  }
+
+  getCarsForUser() {
+    return this.user?.cars;
+  }
 }

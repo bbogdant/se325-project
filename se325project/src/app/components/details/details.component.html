@@ -1,1 +1,19 @@
-<p>details works!</p>
+<ng-container *ngFor="let car of car">
+    <div>
+      <img
+       *ngIf="car.make"
+        src="{{ car.imageUrl }}"
+        alt="thumbnail"
+        class="car-thumbnail"/>
+    </div>
+  <div class="card" style="display: flex; justify-content: center; align-items: center;">
+    <div class="car-name" style="flex-basis: 25%;">Make: {{ car.make }}</div>
+    <div class="car-model" style="flex-basis: 25%;">Model: {{ car.model }}</div>
+    <div class="car-year" style="flex-basis: 25%;">Year: {{ car.year }}</div>
+    <div class="car-price" style="flex-basis: 25%;">Price: {{ car.price | currency}}</div>
+  </div>
+  </ng-container>
+  
+  
+  
+    

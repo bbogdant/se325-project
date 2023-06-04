@@ -1,5 +1,5 @@
-  <div class="container">
-
+<div class="container">
+    <form [formGroup]="login" (ngSubmit)="logindata(login)" class="form-box">
         <h3>Login</h3>
         <div class="form-group">
             <label>Username</label>
@@ -13,6 +13,7 @@
         <a routerLink="/signup" >Signup</a>
         <br/>
         <button type="submit" class="btn btn-success">Login</button>
+    </form>
 </div>
 
   

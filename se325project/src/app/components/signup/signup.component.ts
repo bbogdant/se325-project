@@ -10,7 +10,7 @@ declare var $:any;
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss']
 })
-export class SingupComponent implements OnInit {
+export class SignupComponent implements OnInit {
 
   constructor( private _route:Router, private _http:HttpClient) { }
   singup:FormGroup|any;
@@ -38,5 +38,5 @@ export class SingupComponent implements OnInit {
 
   }
 
-  
+
 }

@@ -1,19 +1,21 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
-import { SessionService } from 'src/app/services/session.service';
+import {HttpClient} from '@angular/common/http';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup} from '@angular/forms';
+import {Router} from '@angular/router';
+import {SessionService} from 'src/app/services/session.service';
 
 declare var $: any;
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
   login: FormGroup | any;
 
-  constructor(private _http: HttpClient, private _route: Router, private session: SessionService) { }
+  constructor(private _http: HttpClient, private _route: Router, private session: SessionService) {
+  }
 
   ngOnInit(): void {
     this.login = new FormGroup({
@@ -21,8 +23,9 @@ export class LoginComponent implements OnInit {
       'password': new FormControl()
     })
   }
+
   logindata(login: FormGroup) {
-    this._http.get<any>("http://localhost:3000/users")
+    this._http.get<any>("http://localhost:3000/signup")
       .subscribe(res => {
         const user = res.find((a: any) => {
           return a.username === this.login.value.username && a.password === this.login.value.password
@@ -39,7 +42,11 @@ export class LoginComponent implements OnInit {
       }, err => {
         alert('Something was wrong');
       })
+  }
 
+  sbtn1() {
+    $('.form-box').css('display', 'none');
+    $('.form-box1').css('display', 'block');
   }
 
 

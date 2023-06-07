@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { FileService } from 'src/app/services/file.service';
-import { SessionService } from 'src/app/services/session.service';
-import { User } from 'src/app/models';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {FileService} from 'src/app/services/file.service';
+import {SessionService} from 'src/app/services/session.service';
+import {User} from 'src/app/models';
 
 
 @Component({
@@ -13,7 +13,8 @@ import { User } from 'src/app/models';
 export class FooterComponent implements OnInit {
   user: User | undefined;
 
-  constructor(private session: SessionService,private router: Router, private fileService: FileService) { }
+  constructor(private session: SessionService, private router: Router, private fileService: FileService) {
+  }
 
   ngOnInit(): void {
   }

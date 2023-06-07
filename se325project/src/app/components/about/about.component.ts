@@ -1,10 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import teamData from 'src/app/team.json'
-import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Team } from 'src/app/models';
-
-
-
+import {ActivatedRoute, Router} from '@angular/router';
+import {Team} from 'src/app/models';
 
 
 @Component({
@@ -16,7 +13,8 @@ export class AboutComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
   }

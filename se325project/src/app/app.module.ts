@@ -5,7 +5,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
-// import { GaugeModule } from 'angular-gauge';
 import {AppComponent} from './app.component';
 import {HomeComponent} from './components/home/home.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
@@ -15,7 +14,6 @@ import {AboutComponent} from './components/about/about.component';
 import {ContactComponent} from './components/contact/contact.component';
 import {LoginComponent} from './components/login/login.component';
 import {SignupComponent} from './components/signup/signup.component';
-import {WishlistComponent} from './components/wishlist/wishlist.component';
 import {RentedComponent} from './components/rented/rented.component';
 
 @NgModule({
@@ -29,13 +27,11 @@ import {RentedComponent} from './components/rented/rented.component';
     ContactComponent,
     LoginComponent,
     SignupComponent,
-    WishlistComponent,
     RentedComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    // GaugeModule.forRoot(),
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,

@@ -1,45 +1,44 @@
-import { Injectable } from '@angular/core';
-import {Car, User} from "../models";
-import carData from 'src/app/cars.json'
-import {HttpClient} from "@angular/common/http";
+import {Injectable} from '@angular/core';
+import {Vehicle} from "../models";
+import carData from 'src/app/vehicles.json'
 import {Observable, of} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class FileService {
-  cars: Car[] = carData;
-  users = 'db.json';
+  cars: Vehicle[] = carData;
 
-  private wishlist: Car[] = [];
+  private rented: Vehicle[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor() {
+  }
 
-  getCar(id: number): Car | undefined {
+  findCar(id: number) {
     return this.cars.find((car) => car.id === id);
   }
 
-  private getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.users);
+  getVehicle(id: number): Vehicle | undefined {
+    return this.cars.find((car) => car.id === id);
   }
 
-  addToWishlist(car: Car) {
-    this.wishlist.push(car);
+  addToRented(car: Vehicle) {
+    this.rented.push(car);
   }
 
-  getWishlist(): Observable<Car[]> {
-    return of(this.wishlist);
+  getWishlist(): Observable<Vehicle[]> {
+    return of(this.rented);
   }
 
   clearWishlist() {
-    this.wishlist = [];
+    this.rented = [];
   }
 
-  removeFromWishlist(car: Car) {
-    this.wishlist = this.wishlist.filter((c) => c.id !== car.id);
+  removeFromRented(car: Vehicle) {
+    this.rented = this.rented.filter((c) => c.id !== car.id);
   }
 
-  isInWishlist(car: Car) {
-    return this.wishlist.some((c) => c.id === car.id);
+  isInRented(car: Vehicle) {
+    return this.rented.some((c) => c.id === car.id);
   }
 }

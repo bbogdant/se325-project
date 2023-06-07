@@ -132,14 +132,72 @@
   },
   {
     "id": 14,
-    "imageUrl": "assets/megane.png",
-    "make": "Renault",
-    "model": "Megane",
+    "imageUrl": "assets/piaggio.png",
+    "make": "Peugeot",
+    "model": "Piaggio",
+    "year": 2015,
+    "price": 1000,
+    "fuel": "gasoline",
+    "transmission":"automatic"
+  },
+  {
+    "id": 15,
+    "imageUrl": "assets/yamaha.png",
+    "make": "Yamaha",
+    "model": "R7",
+    "year": 2023,
+    "price": 5000,
+    "fuel": "diesel",
+    "transmission":"manual"
+  },
+  {
+    "id": 16,
+    "imageUrl": "assets/vespa.png",
+    "make": "Vespa",
+    "model": "GTS 300",
+    "year": 2010,
+    "price": 800,
+    "fuel": "gasoline",
+    "transmission":"manual"
+  },
+  {
+    "id": 17,
+    "imageUrl": "assets/honda.png",
+    "make": "Honda",
+    "model": "CBR 1000",
     "year": 2021,
-    "price": 15000,
+    "price": 19000,
     "fuel": "diesel",
     "transmission":"automatic"
+  },
+  {
+    "id": 18,
+    "imageUrl": "assets/xiaomi.png",
+    "make": "Xiaomi",
+    "model": "Mi Pro 2",
+    "year": 2018,
+    "price": 150,
+    "fuel": "electric",
+    "transmission":"automatic"
+  },
+  {
+    "id": 19,
+    "imageUrl": "assets/denver.png",
+    "make": "Denver",
+    "model": "SCK-5400",
+    "year": 2022,
+    "price": 100,
+    "fuel": "electric",
+    "transmission":"automatic"
+  },
+  {
+    "id": 20,
+    "imageUrl": "assets/msbike.png",
+    "make": "MS Bike",
+    "model": "MS Energy",
+    "year": 2023,
+    "price": 400,
+    "fuel": "electric",
+    "transmission":"automatic"
   }
-
-
 ]

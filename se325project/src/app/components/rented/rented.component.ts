@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {Observable} from "rxjs";
-import {Car} from "../../models";
+import {Vehicle} from "../../models";
 import {FileService} from "../../services/file.service";
 import {Router} from "@angular/router";
-import carData from "../../cars.json";
+import carData from "../../vehicles.json";
 
 @Component({
   selector: 'app-rented',
@@ -11,7 +11,8 @@ import carData from "../../cars.json";
   styleUrls: ['./rented.component.scss']
 })
 export class RentedComponent {
-  rented$: Observable<Car[]>;
+  rented$: Observable<Vehicle[]>;
+  car: Vehicle[] = carData;
 
   constructor(private fileService: FileService, private router: Router) {
     this.rented$ = this.fileService.getWishlist();
@@ -20,9 +21,6 @@ export class RentedComponent {
   ngOnInit() {
   }
 
-  car: Car[] = carData;
-
-  wishlist: Car[];
 
   getCar(id: number) {
     if (this.car) {
@@ -30,12 +28,12 @@ export class RentedComponent {
     }
   }
 
-  isInWishlist(car: Car) {
-    return this.fileService.isInWishlist(car);
+  isInRented(car: Vehicle) {
+    return this.fileService.isInRented(car);
   }
 
-  removeFromWishlist(car: Car) {
-    this.fileService.removeFromWishlist(car);
+  removeFromRented(car: Vehicle) {
+    this.fileService.removeFromRented(car);
     alert("You have successfully removed the vehicle from the list");
   }
 }

@@ -1,4 +1,4 @@
-export interface Car {
+export interface Vehicle {
   id: number,
   imageUrl: string,
   make: string,
@@ -18,6 +18,6 @@ export interface Team {
 
 
 export interface User {
-  users: User[];
-  cars: Car[];
+  username: string;
+  password: string;
 }

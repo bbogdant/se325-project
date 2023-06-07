@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { FileService } from '../../services/file.service';
-import { SessionService } from '../../services/session.service';
-import { User } from 'src/app/models';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {FileService} from '../../services/file.service';
+import {SessionService} from '../../services/session.service';
+import {User} from 'src/app/models';
 
 @Component({
   selector: 'app-navbar',
@@ -11,9 +11,10 @@ import { User } from 'src/app/models';
 })
 export class NavbarComponent implements OnInit {
 
-  user: User | undefined;
+  user: User;
 
-  constructor(private session: SessionService, private router: Router, private fileService: FileService) { }
+  constructor(private session: SessionService, private router: Router, private fileService: FileService) {
+  }
 
   ngOnInit(): void {
   }

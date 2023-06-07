@@ -6,8 +6,8 @@ import {User} from "../models";
 })
 export class SessionService {
 
+  user: User;
   private isLoggedIn = false;
-  user: User | undefined;
 
   constructor() {
   }
@@ -19,7 +19,6 @@ export class SessionService {
 
   logout() {
     this.isLoggedIn = false;
-    this.user = undefined;
   }
 
   getIsLoggedIn() {
@@ -30,7 +29,5 @@ export class SessionService {
     return this.user;
   }
 
-  getCarsForUser() {
-    return this.user?.cars;
-  }
+
 }

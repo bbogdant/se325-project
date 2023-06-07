@@ -1,53 +1,31 @@
 .card {
-    margin-bottom: 20px;
-    background-color: white;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 5px 0px #ccc;
-    transition: all 0.2s;
-    display: flex;
-    text-align: center;
-  }
-  
-  
-  .car-name,
-  .car-model,
-  .car-year,
-  .car-price {
-    display:block;
-    display: flex;
-    border-radius: 50%; 
-    align-items: center;
-    justify-content: space-between; 
-    
-    width: 100%;
-    width: 150px;
-    height: 100px;
-    max-width: 500px;
-    margin: 20px 15px; 
-    padding: 20px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    transition: transform 0.2s;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    margin: 5px;
-    padding: 10px;
-    flex-basis: 25%;
-  }
-  
-  .car-price:hover {
-     transform: scale(1.1);
-     }
-  .car-model:hover {
-      transform: scale(1.1);
-      }
-  .car-year:hover {
-        transform: scale(1.1);
-        }
-  .car-name:hover {
-          transform: scale(1.1);
-          }
-  
-  
-  
+  margin-bottom: 20px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 0 #ccc;
+  transition: all 0.2s;
+  display: flex;
+  text-align: center;
+}
+
+.car-data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 150px;
+  height: 100px;
+  max-width: 500px;
+  margin: 20px 15px;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: transform 0.2s;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  flex-basis: 25%;
+}
+
+.car-data:hover {
+  transform: scale(1.1);
+}

@@ -1,12 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import carData from 'src/app/cars.json'
-import { FileService } from 'src/app/services/file.service';
-import { SessionService } from 'src/app/services/session.service';
-import { Car } from 'src/app/models';
-
-
-exportAs: 'filteredCars'
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import vehicleData from 'src/app/vehicles.json'
+import {FileService} from 'src/app/services/file.service';
+import {SessionService} from 'src/app/services/session.service';
+import {Vehicle} from 'src/app/models';
 
 @Component({
   selector: 'app-home',
@@ -15,108 +12,102 @@ exportAs: 'filteredCars'
 })
 export class HomeComponent implements OnInit {
 
-
-  marka: string;
-  podaci: any[];
   filters: { [key: string]: boolean } = {};
-  filteredCars: Car[] = carData;
+  filteredVehicle: Vehicle[] = vehicleData;
   minPrice: number = 0;
   maxPrice: number = 0;
   selectField = false;
-
+  rented: Vehicle[] = [];
 
   constructor(
     private router: Router,
     private session: SessionService,
-    private fileService: FileService) { }
+    private fileService: FileService) {
+  }
 
+  ngOnInit(): void {
+  }
 
-    ngOnInit(): void {
-    }
+  openVehicleDetails(id: number): void {
+    this.router.navigate(['/details', id])
+  }
 
-    wishlist: Car[] = [];
-  
-  
-    openCarDetails(id: number): void{
-      this.router.navigate(['/details', id])
-    }
-
-    addToWishList(id: number): void {
-      if (this.session.getIsLoggedIn()) {
-        const car = this.fileService.getCar(id);
-        if (car) {
-          this.fileService.addToWishlist(car);
-          alert("You successfully added car to wishlist!")
-        } else {
-        }
+  addToRented(id: number): void {
+    if (this.session.getIsLoggedIn()) {
+      const vehicle = this.fileService.getVehicle(id);
+      if (vehicle) {
+        this.fileService.addToRented(vehicle);
+        alert("You successfully added vehicle to wishlist!")
       } else {
-        this.router.navigate(['/login']);
       }
+    } else {
+      this.router.navigate(['/login']);
     }
+  }
+
   item(item: any) {
     throw new Error('Method not implemented.');
   }
 
-
-  sortCars(sortBy: 'year' | 'price') {
-    this.filteredCars.sort((a, b) => {
+  sortVehicles(sortBy: 'year' | 'price' | '') {
+    this.filteredVehicle.sort((a, b) => {
       if (sortBy === 'year') {
         return a.year - b.year;
-      } 
-      else {
+      } else if (sortBy === 'price') {
         return a.price - b.price;
+      } else {
+        return a.id - b.id;
       }
     });
   }
-
 
   onFilterChange(event: Event) {
     const target = event.target as HTMLInputElement;
     const name = target.name;
     const checked = target.checked;
-  
-    
+
+
     if (checked) {
       this.filters[name] = true;
     } else {
       delete this.filters[name];
     }
   }
-  
 
-  filterCarByFuel(value: string){
+
+  filterVehicleByFuel(value: string) {
     if (value === '') {
-      this.filteredCars = carData;
+      this.filteredVehicle = vehicleData;
     } else {
-      this.filteredCars = this.filteredCars.filter((car) => car.fuel.includes(value));    
+      this.filteredVehicle = this.filteredVehicle.filter((vehicle) => vehicle.fuel.includes(value));
     }
   }
 
-  filterCarByTransmission(value: string){
+  filterVehicleByTransmission(value: string) {
     if (value === '') {
-    this.filteredCars = carData;
+      this.filteredVehicle = vehicleData;
     } else {
-      this.filteredCars = this.filteredCars.filter((car) => car.transmission.includes(value));    
+      this.filteredVehicle = this.filteredVehicle.filter((vehicle) => vehicle.transmission.includes(value));
     }
   }
 
-
-  // filterByPrice(minPrice: number, maxPrice: number): void {
-  //   this.filteredCars = this.car.filter(car => car.price >= minPrice && car.price <= maxPrice);
-  // }
-
-  filterByPrice(minPrice: number, maxPrice: number){
-    this.filteredCars = this.filteredCars.filter((car) => car.price >= minPrice && car.price <= maxPrice);
+  filterByPrice(minPrice: number, maxPrice: number) {
+    this.filteredVehicle = this.filteredVehicle.filter((vehicle) => vehicle.price >= parseInt(String(minPrice)) && vehicle.price <= parseInt(String(maxPrice)));
   }
 
-
-  searchCars(make: string) {
-    this.filteredCars = this.filteredCars.filter((car) => car.make.toUpperCase().includes(make));
+  searchVehicles(make: string) {
+    if (make === '') {
+      this.filteredVehicle = vehicleData;
+    } else {
+      this.filteredVehicle = this.filteredVehicle.filter((vehicle) => vehicle.make.toUpperCase().includes(make.toUpperCase()));
+    }
   }
 
-  // resetCars() {
-  //   this.filteredCars = carData;
-  // }
+  resetVehicles() {
+    this.minPrice = 0;
+    this.maxPrice = 0;
+    this.filteredVehicle = vehicleData;
+  }
 }
 
 

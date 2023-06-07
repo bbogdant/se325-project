@@ -1,37 +1,38 @@
 <section class="footer" id="footer">
 
-    <div class="box-container">
+  <div class="box-container">
 
-        <div class="box">
-            <h3>About us</h3>
-            <p class="p-about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quas magni pariatur est accusantium voluptas enim nemo facilis sit debitis.
-            </p>
-        </div>
-        <div class="box">
-            <h3>Our locations</h3>
-            <a>Serbia</a>
-            <a>Japan</a>
-            <a>USA</a>
-            <a>France</a>
-        </div>
-        <div class="box">
-            <h3>Quick links</h3>
-            <a href="/home">Home</a>
-            <a href="/about">About</a>
-            <a href="/contact">Contact</a>
-            <a  *ngIf="!isLoggedIn()" href="/login">Login</a>
-            <a  *ngIf="isLoggedIn()" (click)="logout()">Logout</a>
-        </div>
-        <div class="box">
-            <h3>follow us</h3>
-            <a href="https://www.facebook.com" target="_blank">Facebook</a>
-            <a href="https://www.instagram.com" target="_blank">Instagram</a>
-            <a href="https://twitter.com" target="_blank">Twitter</a>
-            <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-        </div>
-
+    <div class="box">
+      <h3>About us</h3>
+      <p class="p-about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quas magni pariatur est
+        accusantium voluptas enim nemo facilis sit debitis.
+      </p>
+    </div>
+    <div class="box">
+      <h3>Our locations</h3>
+      <a>Serbia</a>
+      <a>Japan</a>
+      <a>USA</a>
+      <a>France</a>
+    </div>
+    <div class="box">
+      <h3>Quick links</h3>
+      <a href="/home">Home</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a *ngIf="!isLoggedIn()" href="/login">Login</a>
+      <a (click)="logout()" *ngIf="isLoggedIn()">Logout</a>
+    </div>
+    <div class="box">
+      <h3>follow us</h3>
+      <a href="https://www.facebook.com" target="_blank">Facebook</a>
+      <a href="https://www.instagram.com" target="_blank">Instagram</a>
+      <a href="https://twitter.com" target="_blank">Twitter</a>
+      <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
     </div>
 
-    <h1 class="credit">created by <span>Bogdan Trajkovic 4405</span> | all rights reserved! </h1>
+  </div>
+
+  <h1 class="credit">Created by <span>Team Cubic</span> | all rights reserved</h1>
 
 </section>

@@ -1,57 +1,64 @@
-<div class="car-shop-div">
-    <h1>Find Best Car For You - Auto Select</h1>
-    <p>Find a car that meets all of your needs.</p>
-  </div>
-  
-  <div class="searchFilter">
-    <h2>Filter By:</h2>
-    <div class="formDiv">
-      <form (submit)="searchCars(searchMake.value)">
-        <label>Name:</label>
-        <input type="text" #searchMake placeholder="Search over 10,000+ cars">
-        <button type="submit">Search</button>
-        <br><br>
-      </form>
+<div class="vehicle-shop-div">
+  <h1>Find Best Vehicle For You - Auto Select</h1>
+  <p>Find a vehicle that meets all of your needs.</p>
+</div>
+
+<div class="searchFilter">
+  <div class="filter-title-div"><h2>Filter By:</h2></div>
+  <div>
+    <form (submit)="searchVehicles(searchMake.value)">
+      <label>Name: </label>
+      <input #searchMake placeholder="Search over 10,000+ vehicles" type="text">
+      <button type="submit">Search</button>
+    </form>
+    <div class="price-filter">
       <form (submit)="filterByPrice(searchMin.value, searchMax.value)">
-        <label>Price:</label>
-        <input #searchMin placeholder="Min Price">
-        <input #searchMax placeholder="Max Price">
+        <label>Price: </label>
+        <input #searchMin placeholder="Min Price" type="text">
+        <input #searchMax placeholder="Max Price" type="text">
         <button type="submit">Search</button>
       </form>
+      <button (click)="resetVehicles()" class="reset-button">Reset Price</button>
     </div>
   </div>
-  <div class="cars">
-    <select (change)="sortCars($event.target.value)">
-      <option value="" disabled selected>Select an option</option>
+</div>
+<div class="content">
+  <div class="select-div">
+    <select (change)="sortVehicles($event.target.value)">
+      <option selected value="">Sort by</option>
       <option value="year">Year</option>
       <option value="price">Price</option>
     </select>
-    <select (change)="filterCarByFuel($event.target.value)">
-      <option value="" selected>Fuel type</option>
+    <select (change)="filterVehicleByFuel($event.target.value)">
+      <option selected value="">Fuel type</option>
       <option value="diesel">Diesel</option>
       <option value="gasoline">Gasoline</option>
+      <option value="electric">Electric</option>
     </select>
-    <select (change)="filterCarByTransmission($event.target.value)">
-      <option value="" selected>Transmission type</option>
+    <select (change)="filterVehicleByTransmission($event.target.value)">
+      <option selected value="">Transmission type</option>
       <option value="automatic">Automatic</option>
       <option value="manual">Manual</option>
     </select>
-    <ng-container *ngFor="let car of filteredCars">
+  </div>
+  <div class="cars">
+    <ng-container *ngFor="let vehicle of filteredVehicle">
       <div class="car">
-        <div (click)="openCarDetails(car.id)" class="car-thumb-container">
-          <img *ngIf="car.make" src="{{ car.imageUrl }}" alt="thumbnail" class="car-thumbnail" />
+        <div (click)="openVehicleDetails(vehicle.id)" class="car-thumb-container car-image">
+          <img *ngIf="vehicle.make" alt="thumbnail" class="car-thumbnail" src="{{ vehicle.imageUrl }}"/>
         </div>
         <div class="car-url">
-          <p class="car-name">Make: {{ car.make }}</p>
-          <p class="car-model">Model: {{ car.model }}</p>
-          <p class="car-year">Year: {{ car.year }}</p>
-          <p class="car-price">Price: {{ car.price | currency}}</p>
-          <p class="car-name"> Fuel: {{car.fuel}}</p>
-          <p class="car-name"> Transmission: {{car.transmission}}</p>
-          <div class="car-img" (click)="addToWishList(car.id)">
-            <img class="car-favorite" src="assets/heart.png" alt="favorite">
+          <p class="car-name">Make: {{ vehicle.make }}</p>
+          <p class="car-model">Model: {{ vehicle.model }}</p>
+          <p class="car-year">Year: {{ vehicle.year }}</p>
+          <p class="car-price">Price: {{ vehicle.price | currency}}</p>
+          <p class="car-name"> Fuel: {{vehicle.fuel}}</p>
+          <p class="car-name"> Transmission: {{vehicle.transmission}}</p>
+          <div (click)="addToRented(vehicle.id)" class="car-img">
+            <img alt="favorite" class="car-favorite" src="assets/heart.png">
           </div>
         </div>
       </div>
     </ng-container>
   </div>
+</div>

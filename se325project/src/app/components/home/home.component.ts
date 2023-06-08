@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
       const vehicle = this.fileService.getVehicle(id);
       if (vehicle) {
         this.fileService.addToRented(vehicle);
-        alert("You successfully added vehicle to wishlist!")
+        alert("You successfully added vehicle to your Rentals!")
       } else {
       }
     } else {

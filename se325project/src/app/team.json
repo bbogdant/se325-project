@@ -1,22 +1,22 @@
 [
 
   {
-    "image": "https://cdn3.iconfinder.com/data/icons/many-peoples-vol-2/512/15-1024.png",
+    "image": "assets/bogdant.png",
     "name": "Bogdan Trajković",
     "title": "CEO"
   },
   {
-    "image": "https://cdn3.iconfinder.com/data/icons/many-peoples/512/6-1024.png",
+    "image": "assets/djole.png",
     "name": "Đorđe Ristić",
     "title": "COO"
   },
   {
-    "image": "https://cdn3.iconfinder.com/data/icons/many-peoples-vol-2/512/11-1024.png",
+    "image": "assets/lulefoto.png",
     "name": "Luka Milošević",
     "title": "CMO"
   },
   {
-    "image": "https://cdn3.iconfinder.com/data/icons/many-peoples-vol-2/512/11-1024.png",
+    "image": "assets/bogdan.png",
     "name": "Bogdan Petrović",
     "title": "CFO"
   }
